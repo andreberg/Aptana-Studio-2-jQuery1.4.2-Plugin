@@ -1,0 +1,38 @@
+h2. jQuery 1.4.2 Plugin for Aptana Studio 2 
+
+
+I took the liberty and modified the jQuery 1.4.2 plugin for Aptana Studio 2 in order to update included Visual jQuery view to use and show the 1.4.2 jQuery API and I also added a second view containing a simple jQuery cheat sheet. While the cheat sheet is a bit older (updated by myself to jQuery 1.3.2) it concentrates well on almost all of the things you use in your daily jQuery workflow.
+
+h3. Installation
+
+# First, you need to have the official 1.4.2 jQuery plugin installed. You can check this via the @plugin manager view@. 
+If you don't have it installed, go ahead and install it via @Help > Install Aptana Features...@. 
+# If Aptana Studio 2 is still running, quit it.
+# Then go to your Aptana Studio 2 install directory. Inside is a directory called @plugins@. 
+# In there find a file called @com.jquery.1.4_1.4.2.00001.jar@. Since we are going to replace that file I'd recommend to back it up. Just in case (e.g. rename it by appending @.bak@ after the @.jar@ extension).
+# Delete the original file and put in its place the downloaded @com.jquery.1.4_1.4.2.00001.jar@ file from this repository's "Downloads":http://github.com/andreberg/Aptana-Studio-2-jQuery1.4.2-Plugin/downloads section. 
+_(Note: if you're paranoid enough to not wanting to use the plugin from Downloads see below for bundling it up yourself from the source)_.
+# Restart Aptana Studio 2. You should be able now to access Visual jQuery 1.4.2 and the Cheat Sheet via @Window > Show View > Other...@.
+
+h3. Making the JAR Bundle Yourself
+
+To bundle the source yourself, you need a shell environment and the jar utility.
+
+# First do the usual @git clone@ and clone this repository.
+# Open a Terminal and cd into the @src@ subdirectory.
+# Run the following command: @jar cvfm com.jquery.1.4_1.4.2.00001 META-INF/MANIFEST.MF *.* docs/ icons/ libraries/ samples/ support/ views/@
+This produces a file called @com.jquery.1.4_1.4.2.00001.jar@ inside the @src@ subdirectory.
+_(Note: this assumes the jar utility lives in your path. Unfortunately I am unfamiliar with how Windows people handle this. Maybe using Cygwin?)_
+
+h3. Credits
+
+Thanks to the guy(s) at colorcharge.com for the initial 1.2.4 jQuery cheat sheet.
+
+h3. Disclaimer
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+h3. License
+
+Dual-licensed under the GNU Public license and the Aptana Public license. 
+_(Essentialy the same as the unmodified, official jQuery 1.4.2 plugin by Aptana)_
