@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.help,com.aptana.ide.snippets,com.aptana.id
+ e.samples,com.aptana.ide.projects,com.aptana.ide.core.ui,com.aptana.i
+ de.core,com.aptana.ide.editor.js
+Bundle-Vendor: %providerName
+Bundle-Version: 1.4.2.00001
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.jquery.1.4;singleton:=true
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+    <head>
+    	<title>jQuery Cheat Sheet</title>
+    	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+		
+		<meta name="author" content="Andre Berg (Berg Media)"/>
+		<meta name="copyright" content="Berg Media 2009. All rights reserved."/>
+	
+		<style type="text/css">
+			body {
+				background-color: #000;
+			}
+		</style>
+		
+		<script type="text/javascript" src="lib/jquery/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				// options
+				var fadetime = 50;
+				var useImages = false; // always false... pre-scaled images have been stripped 
+									   // as the computational method was more efficient with good results
+				
+				var imgarr = ["jQuery-1.2-Cheat-Sheet-1100px.jpg", 
+							  "jQuery-1.2-Cheat-Sheet-1000px.jpg", 
+							  "jQuery-1.2-Cheat-Sheet-900px.jpg", 
+							  "jQuery-1.2-Cheat-Sheet-800px.jpg", 
+							  "jQuery-1.2-Cheat-Sheet-1200px.jpg"];
+							  
+				var sizearr = [1200, 1100, 1000, 900, 800, 1313];
+
+				var i = 0;
+								
+				$('html').click(function() {
+					i++;
+					if (useImages) {
+						// this uses precomputed images from Photoshop's Bicubic Sharper scaling method.
+						// the advantage is that the resizing is likely to be of higher quality which is important for a cheat sheet
+						// the disadvantage is that it needs more than one image to complete the job
+						$('.sheet').fadeOut(fadetime).remove();
+						$('<img class="sheet" src="images/' + imgarr[i%imgarr.length] + '" alt="jQuery 1.2 Cheat Sheet"/>').appendTo($('#content'));	
+					} else {
+						// this uses the width attribute to scale down the same image
+						// the advantage is that it only needs one image to complete the job
+						// the disadvantage is that it relies on the browser's scaling method for the quality of the resize
+						$('.sheet').attr('width', sizearr[i%sizearr.length].toString());						
+					}
+				});
+			});
+			
+		</script>
+    </head>
+    <body id="home">
+    	<div id="content">
+    		<img class="sheet" src="images/jQuery-1.3-Cheat-Sheet.png" alt="jQuery 1.3 Cheat Sheet" />
+    	</div>
+    </body>
+</html>
