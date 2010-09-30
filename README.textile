@@ -26,7 +26,10 @@ _(Note: this assumes the jar utility lives in your path. Unfortunately I am unfa
 
 h3. Credits
 
-Thanks to the guy(s) at colorcharge.com for the initial 1.2.4 jQuery cheat sheet.
+Thanks to Aptana for a cool IDE (yes, Aptana PHP 1.1 plugin for Studio 2 - it's possible).
+Thanks to Aptana and contributors for a cool jQuery plugin.
+Thanks to "Yehuda Katz":http://yehudakatz.com for "Visual jQuery":http://visualjquery.com and to "Remy Sharp":http://remysharp.com for updating it throughout.
+Thanks to the guy(s) at "Color Charge":http://colorcharge.com for the initial 1.2.4 jQuery cheat sheet.
 
 h3. Disclaimer
 
