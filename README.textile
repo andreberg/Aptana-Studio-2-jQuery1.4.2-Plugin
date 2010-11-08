@@ -5,14 +5,22 @@ I took the liberty and modified the jQuery 1.4.2 plugin for Aptana Studio 2 in o
 
 h3. Installation
 
-# First, you need to have the official 1.4.2 jQuery plugin installed. You can check this via the @plugin manager view@. 
-If you don't have it installed, go ahead and install it via @Help > Install Aptana Features...@. 
+# First, you need to have the official 1.4.2 jQuery plugin installed. You can check this via the @plugin manager view@.  
+Note: Do *not* also install the jQuery 1.3.2 plugin or its Visual jQuery view will always be loaded instead of my custom 1.4.2 one. 
+The 1.3.2 Visual jQuery has a broken @Selectors@ section. If you don't have it installed, go ahead and install it via @Help > Install Aptana Features...@. 
 # If Aptana Studio 2 is still running, quit it.
 # Then go to your Aptana Studio 2 install directory. Inside is a directory called @plugins@. 
 # In there find a file called @com.jquery.1.4_1.4.2.00001.jar@. Since we are going to replace that file I'd recommend to back it up. Just in case (e.g. rename it by appending @.bak@ after the @.jar@ extension).
 # Delete the original file and put in its place the downloaded @com.jquery.1.4_1.4.2.00001.jar@ file from this repository's "Downloads":http://github.com/andreberg/Aptana-Studio-2-jQuery1.4.2-Plugin/downloads section. 
 _(Note: if you're paranoid enough to not wanting to use the plugin from Downloads see below for bundling it up yourself from the source)_.
 # Restart Aptana Studio 2. You should be able now to access Visual jQuery 1.4.2 and the Cheat Sheet via @Window > Show View > Other...@.
+
+h3. Caveats
+
+Aptana and Eclipse cache views from plugins in the following directory: @<Aptana or Eclipse root dir>/configuration/org.eclipse.osgi/bundles@.
+
+So if after (re)installing the custom 1.4.2 jQuery plugin, the old broken Visual jQuery view still comes up instead, you may need to delete the folder that has the cached Visual jQuery view. To do that the most direct way is to do a search for the name @visual_jquery@ inside the @bundles@ dir. When the search is complete one folder should be found inside a continuing path that looks like this @<some number>/1/.cp/views/visual_jquery@. The @<some number>@ is the folder  that you want to delete (with Aptana or Eclipse not running!). The next time you start the application the view should now get re-created from the custom 1.4.2 jQuery plugin bundle.
+
 
 h3. Making the JAR Bundle Yourself
 
