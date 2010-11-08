@@ -6,8 +6,9 @@ I took the liberty and modified the jQuery 1.4.2 plugin for Aptana Studio 2 in o
 h3. Installation
 
 # First, you need to have the official 1.4.2 jQuery plugin installed. You can check this via the @plugin manager view@.  
+If you don't have it installed, go ahead and install it via @Help > Install Aptana Features...@.  
 Note: Do *not* also install the jQuery 1.3.2 plugin or its Visual jQuery view will always be loaded instead of my custom 1.4.2 one. 
-The 1.3.2 Visual jQuery has a broken @Selectors@ section. If you don't have it installed, go ahead and install it via @Help > Install Aptana Features...@. 
+The 1.3.2 Visual jQuery has a broken @Selectors@ section.
 # If Aptana Studio 2 is still running, quit it.
 # Then go to your Aptana Studio 2 install directory. Inside is a directory called @plugins@. 
 # In there find a file called @com.jquery.1.4_1.4.2.00001.jar@. Since we are going to replace that file I'd recommend to back it up. Just in case (e.g. rename it by appending @.bak@ after the @.jar@ extension).
