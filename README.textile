@@ -20,7 +20,13 @@ h3. Caveats
 
 Aptana and Eclipse cache views from plugins in the following directory: @<Aptana or Eclipse root dir>/configuration/org.eclipse.osgi/bundles@.
 
-So if after (re)installing the custom 1.4.2 jQuery plugin, the old broken Visual jQuery view still comes up instead, you may need to delete the folder that has the cached Visual jQuery view. To do that the most direct way is to do a search for the name @visual_jquery@ inside the @bundles@ dir. When the search is complete one folder should be found inside a continuing path that looks like this @<some number>/1/.cp/views/visual_jquery@. The @<some number>@ is the folder  that you want to delete (with Aptana or Eclipse not running!). The next time you start the application the view should now get re-created from the custom 1.4.2 jQuery plugin bundle.
+If after (re)installing the custom 1.4.2 jQuery plugin, the old broken Visual jQuery view still comes up instead, you may need to delete the folder that has the cached Visual jQuery view. To do that the most direct way is to do a search for the name @visual_jquery@ inside the @bundles@ dir. When the search is complete one folder should be found inside a continuing path that looks like this @<some number>/1/.cp/views/visual_jquery@. The @<some number>@ is the folder  that you want to delete (with Aptana or Eclipse not running!). The next time you start the application the view should now get re-created from the custom 1.4.2 jQuery plugin bundle.
+    
+In rare cases I found that this _still_ wasn't enough. So, to really force Aptana/Eclipse to re-cache it's views, temporarily remove the following file:
+@<Aptana or Eclipse root dir>/configuration/org.eclipse.osgi/.bundledata.<some_number>@. 
+    
+Upon restarting Aptana/Eclipse the file should be re-created and it should then, finally, read in any changes from the replaced JAR bundle.
+Temporarily, because I want you to be able to put the file back where it was in case there's trouble. I didn't have any problems, but, you never know it might get re-created borked so be sure to throw it away once you know everything is working.
 
 
 h3. Making the JAR Bundle Yourself
