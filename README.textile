@@ -29,7 +29,7 @@ To bundle the source yourself, you need a shell environment and the jar utility.
 
 # First do the usual @git clone@ and clone this repository.
 # Open a Terminal and cd into the @src@ subdirectory.
-# Run the following command: @jar cvfm com.jquery.1.4_1.4.2.00001 META-INF/MANIFEST.MF *.* docs/ icons/ libraries/ samples/ support/ views/@
+# Run the following command: @jar cvfm com.jquery.1.4_1.4.2.00001.jar META-INF/MANIFEST.MF *.* docs/ icons/ libraries/ samples/ support/ views/@
 This produces a file called @com.jquery.1.4_1.4.2.00001.jar@ inside the @src@ subdirectory.
 _(Note: this assumes the jar utility lives in your path. Unfortunately I am unfamiliar with how Windows people handle this. Maybe using Cygwin?)_
 
